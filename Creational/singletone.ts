@@ -30,5 +30,3 @@ class CoffeeMachine {
 const machine = CoffeeMachine.getInstance();
 machine.refill();
 machine.dispense(2);
-
-CoffeeMachine.getInstance().dispense(3);

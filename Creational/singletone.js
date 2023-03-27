@@ -25,3 +25,4 @@ var CoffeeMachine = /** @class */ (function () {
 var machine = CoffeeMachine.getInstance();
 machine.refill();
 machine.dispense(2);
+CoffeeMachine.getInstance().dispense(3);
