@@ -42,16 +42,16 @@ var Builder;
     //   const paymentSdkConfigBuilder = new PaymentSdkConfigBuilder("metro", "dsldjsjdlskjdls");
     //   paymentSdkConfigBuilder.setMaxRetry(3);
     //   paymentSdkConfigBuilder.setCurrency("USD");
-    //   const paymentSdkConfigBuilder = new PaymentSdkConfigBuilder(
-    //     "metro",
-    //     "dsldjsjdlskjdls"
-    //   )
-    //     .setMaxRetry(3)
-    //     .setCurrency("USD");
-    //   const paymentSdkConfig: PaymentSdkConfig = paymentSdkConfigBuilder.build();
-    //   console.log(paymentSdkConfig);
-    var paymentSdkConfig = new PaymentSdkConfigBuilder("metro", "fkldjlfkd")
-        .setCurrency("MDL")
-        .build();
+    var paymentSdkConfigBuilder = new PaymentSdkConfigBuilder("metro", "dsldjsjdlskjdls")
+        .setMaxRetry(3)
+        .setCurrency("USD");
+    var paymentSdkConfig = paymentSdkConfigBuilder.build();
     console.log(paymentSdkConfig);
+    //   const paymentSdkConfig: PaymentSdkConfig = new PaymentSdkConfigBuilder(
+    //     "metro",
+    //     "fkldjlfkd"
+    //   )
+    //     .setCurrency("MDL")
+    //     .build();
+    //   console.log(paymentSdkConfig);
 })(Builder || (Builder = {}));
