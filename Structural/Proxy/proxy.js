@@ -71,8 +71,8 @@ var Proxy = /** @class */ (function () {
 var apiReal = new APIReal();
 var proxy = new Proxy(apiReal);
 proxy.fetchData().then(function (data) {
-    console.log(data); // Afiseaza datele din API in consola
+    console.log(data);
 });
 proxy.fetchData().then(function (data) {
-    console.log(data); // Se va utiliza cache-ul si se va afisa din nou datele din API in consola
+    console.log(data);
 });

@@ -75,7 +75,6 @@ var Team = /** @class */ (function (_super) {
     };
     return Team;
 }(armyUnit));
-// Testam aplicatia
 var division = new Division();
 var brigades1 = new Brigade();
 var brigades2 = new Brigade();
@@ -93,4 +92,4 @@ brigades1.addPlatoon(platoons1);
 brigades2.addPlatoon(platoons2);
 division.addBrigade(brigades1);
 division.addBrigade(brigades2);
-console.log("Total power of : ".concat(division.getArmyPower()));
+console.log("Total power of division: ".concat(division.getArmyPower()));

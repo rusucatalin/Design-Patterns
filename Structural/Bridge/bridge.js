@@ -53,7 +53,6 @@ var BuyOrder = /** @class */ (function (_super) {
     }
     BuyOrder.prototype.execute = function () {
         console.log("Buying ".concat(this.quantity, " shares of ").concat(this.symbol));
-        // adaugă acțiuni în portofoliu
     };
     return BuyOrder;
 }(TradeOrder));
@@ -64,7 +63,6 @@ var SellOrder = /** @class */ (function (_super) {
     }
     SellOrder.prototype.execute = function () {
         console.log("Selling ".concat(this.quantity, " shares of ").concat(this.symbol));
-        // scoate acțiuni din portofoliu
     };
     return SellOrder;
 }(TradeOrder));
@@ -75,7 +73,6 @@ var TradeForm = /** @class */ (function () {
     }
     TradeForm.prototype.render = function () {
         this.uiElement.render();
-        // adaugă evenimente pentru butoane
     };
     TradeForm.prototype.executeTrade = function () {
         this.transactionElement.execute();
