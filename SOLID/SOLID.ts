@@ -89,14 +89,19 @@ class OrderService implements IOrderService {
 }
 
 const productRepository = new ProductRepository([
-    new StandardProduct("Product 1", 10, "Description 1"),
-    new SaleProduct("Product 2", 20, "Description 2", 5),
+    new StandardProduct("Product food", 10, "Description of food"),
+    new SaleProduct("Product drink", 20, "Description of drink", 5),
 ]);
 
 const orderService = new OrderService(productRepository);
 
-const products = [productRepository.getProductByName("Product 1")!];
+const products = [productRepository.getProductByName("Product food")!];
 
 const order = orderService.createOrder(products, "customer@example.com");
 
-console.log(order);
+const products1 = [productRepository.getProductByName("Product drink")!];
+
+const order1 = orderService.createOrder(products1, "costumer1@example.com");
+
+console.log(order, order1);
+

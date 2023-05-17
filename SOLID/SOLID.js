@@ -73,10 +73,12 @@ var OrderService = /** @class */ (function () {
     return OrderService;
 }());
 var productRepository = new ProductRepository([
-    new StandardProduct("Product 1", 10, "Description 1"),
-    new SaleProduct("Product 2", 20, "Description 2", 5),
+    new StandardProduct("Product food", 10, "Description of food"),
+    new SaleProduct("Product drink", 20, "Description of drink", 5),
 ]);
 var orderService = new OrderService(productRepository);
-var products = [productRepository.getProductByName("Product 1")];
+var products = [productRepository.getProductByName("Product food")];
 var order = orderService.createOrder(products, "customer@example.com");
-console.log(order);
+var products1 = [productRepository.getProductByName("Product drink")];
+var order1 = orderService.createOrder(products1, "costumer1@example.com");
+console.log(order, order1);
