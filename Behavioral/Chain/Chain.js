@@ -34,7 +34,7 @@ var ConcreteHandlerA = /** @class */ (function (_super) {
     }
     ConcreteHandlerA.prototype.handleRequest = function (request) {
         if (request === 'A') {
-            console.log("ConcreteHandlerA: Am gestionat cererea.");
+            console.log("ConcreteHandlerA: Request send");
         }
         else {
             _super.prototype.handleRequest.call(this, request);
@@ -49,7 +49,7 @@ var ConcreteHandlerB = /** @class */ (function (_super) {
     }
     ConcreteHandlerB.prototype.handleRequest = function (request) {
         if (request === 'B') {
-            console.log("ConcreteHandlerB: Am gestionat cererea.");
+            console.log("ConcreteHandlerB: Request send.");
         }
         else {
             _super.prototype.handleRequest.call(this, request);
@@ -64,7 +64,7 @@ var ConcreteHandlerC = /** @class */ (function (_super) {
     }
     ConcreteHandlerC.prototype.handleRequest = function (request) {
         if (request === 'C') {
-            console.log("ConcreteHandlerC: Am gestionat cererea.");
+            console.log("ConcreteHandlerC: Request send.");
         }
         else {
             _super.prototype.handleRequest.call(this, request);
@@ -72,18 +72,14 @@ var ConcreteHandlerC = /** @class */ (function (_super) {
     };
     return ConcreteHandlerC;
 }(AbstractHandler));
-// Pasul 3: Utilizarea sistemului de gestionare a cererilor
 var handlerA = new ConcreteHandlerA();
 var handlerB = new ConcreteHandlerB();
 var handlerC = new ConcreteHandlerC();
 handlerA.setNext(handlerB);
 handlerB.setNext(handlerC);
-// Creați și trimiteți o cerere către handlerA
 var requestA = 'A';
 handlerA.handleRequest(requestA);
-// Creați și trimiteți o cerere către handlerB
 var requestB = 'B';
 handlerA.handleRequest(requestB);
-// Creați și trimiteți o cerere către handlerC
 var requestC = 'C';
 handlerA.handleRequest(requestC);
