@@ -49,7 +49,7 @@ class ConcreteColleague extends Colleague {
     }
 }
 
-// Utilizarea sablonului Mediator
+
 const mediator: Mediator = new ConcreteMediator();
 
 const colleague1: Colleague = new ConcreteColleague(mediator);
@@ -58,5 +58,5 @@ const colleague2: Colleague = new ConcreteColleague(mediator);
 mediator.register(colleague1);
 mediator.register(colleague2);
 
-colleague1.send("Hello World!");
-colleague2.send("?");
+colleague1.send("Hi fantastic!");
+colleague2.send("Cocacolastic!");

@@ -44,10 +44,10 @@ var ConcreteColleague = /** @class */ (function (_super) {
         return _super.call(this, mediator) || this;
     }
     ConcreteColleague.prototype.receiveMessage = function (message) {
-        console.log("Mesaj primit: ".concat(message));
+        console.log("message received: ".concat(message));
     };
     ConcreteColleague.prototype.send = function (message) {
-        console.log("Trimitere mesaj: ".concat(message));
+        console.log("message sent: ".concat(message));
         this.mediator.sendMessage(message, this);
     };
     return ConcreteColleague;
@@ -58,5 +58,5 @@ var colleague1 = new ConcreteColleague(mediator);
 var colleague2 = new ConcreteColleague(mediator);
 mediator.register(colleague1);
 mediator.register(colleague2);
-colleague1.send("Salut coleg!");
-colleague2.send("Bună! Cum merge?");
+colleague1.send("Hi fantastic!");
+colleague2.send("Cocacolastic!");
