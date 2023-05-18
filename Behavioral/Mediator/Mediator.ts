@@ -1,10 +1,9 @@
-// Definirea interfeței mediatorului
 interface Mediator {
     sendMessage(message: string, sender: Colleague): void;
     register(colleague: Colleague): void;
 }
 
-// Clasa abstractă pentru colegi (componente)
+
 abstract class Colleague {
     protected mediator: Mediator;
 
@@ -16,7 +15,7 @@ abstract class Colleague {
     abstract send(message: string): void;
 }
 
-// Implementarea mediatorului
+
 class ConcreteMediator implements Mediator {
     private colleagues: Colleague[] = [];
 
@@ -33,7 +32,7 @@ class ConcreteMediator implements Mediator {
     }
 }
 
-// Implementarea unui coleg concret
+
 class ConcreteColleague extends Colleague {
     constructor(mediator: Mediator) {
         super(mediator);
