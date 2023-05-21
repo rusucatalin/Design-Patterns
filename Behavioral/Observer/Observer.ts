@@ -57,19 +57,19 @@ class UserNotification implements Observer {
     update(event: string, data: any): void {
         switch (event) {
             case 'product_added':
-                console.log(`Utilizatorul ${this.username} a primit o notificare: A fost adăugat un produs nou.`);
-                console.log('Detalii produs:', data);
+                console.log(`User ${this.username} Notification: new product was added.`);
+                console.log('Product details:', data);
                 break;
             case 'product_updated':
-                console.log(`Utilizatorul ${this.username} a primit o notificare: A fost actualizat un produs.`);
-                console.log('Detalii produs actualizat:', data);
+                console.log(`User ${this.username} Notification: An product was updated.`);
+                console.log('Product details update:', data);
                 break;
             case 'product_deleted':
-                console.log(`Utilizatorul ${this.username} a primit o notificare: A fost șters un produs.`);
-                console.log('ID produs șters:', data);
+                console.log(`User ${this.username} Notification: An product was deleted.`);
+                console.log('ID product was deleted:', data);
                 break;
             default:
-                console.log(`Utilizatorul ${this.username} a primit o notificare cu eveniment necunoscut.`);
+                console.log(`User ${this.username} Notification: unknown`);
                 break;
         }
     }
@@ -91,7 +91,7 @@ const newProduct = { id: '123', name: 'Laptop', price: 2000 };
 productManagementSystem.addProduct(newProduct);
 
 
-const updatedProduct = { id: '456', name: 'Telefon', price: 1500 };
+const updatedProduct = { id: '456', name: 'Smartphone', price: 1500 };
 productManagementSystem.updateProduct(updatedProduct);
 
 
@@ -102,5 +102,5 @@ productManagementSystem.deleteProduct(deletedProductId);
 productManagementSystem.removeObserver(user2);
 
 
-const anotherProduct = { id: '999', name: 'Căști wireless', price: 100 };
+const anotherProduct = { id: '999', name: 'Wireless earphone', price: 100 };
 productManagementSystem.addProduct(anotherProduct);
