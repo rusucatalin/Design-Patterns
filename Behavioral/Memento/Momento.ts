@@ -1,4 +1,4 @@
-class Momento {
+class Memento {
     private state: string;
 
     constructor(state: string) {
@@ -13,8 +13,8 @@ class Momento {
 
 class Editor {
     private text: string;
-    private history: Momento[] = [];
-    private redoHistory: Momento[] = [];
+    private history: Memento[] = [];
+    private redoHistory: Memento[] = [];
 
     setText(text: string) {
         this.text = text;
@@ -25,8 +25,8 @@ class Editor {
     }
 
     save(): void {
-        const momento = new Momento(this.text);
-        this.history.push(momento);
+        const memento = new Memento(this.text);
+        this.history.push(memento);
         this.redoHistory = [];
     }
 
@@ -35,9 +35,9 @@ class Editor {
             return;
         }
 
-        const momento = this.history.pop();
-        this.redoHistory.push(momento);
-        this.text = momento.getState();
+        const memento = this.history.pop();
+        this.redoHistory.push(memento);
+        this.text = memento.getState();
     }
 
     redo(): void {
@@ -45,11 +45,11 @@ class Editor {
             return;
         }
 
-        const redoMomento = this.redoHistory.pop();
-        const currentMomento = new Momento(this.text);
-        this.history.push(currentMomento);
+        const redoMemento = this.redoHistory.pop();
+        const currentMemento = new Memento(this.text);
+        this.history.push(currentMemento);
 
-        this.text = redoMomento.getState();
+        this.text = redoMemento.getState();
     }
 }
 
